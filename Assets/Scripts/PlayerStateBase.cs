@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class PlayerStateBase: IPlayerState, IDisposable
+public abstract class PlayerStateBase: IPlayerState, IDisposable
 {
     //初期化メソッド
     public virtual void Initialize()
@@ -17,14 +17,14 @@ public class PlayerStateBase: IPlayerState, IDisposable
     }
 
     //状態が始まったときの処理
-    public virtual async UniTask EnterAsync()
+    public virtual async UniTask OnEnterAsync()
     {
         Debug.Log("PlayerStateBase EnterAsync");
         await UniTask.CompletedTask;
     }
 
     //状態が終わるときの処理
-    public virtual async UniTask ExitAsync()
+    public virtual async UniTask OnExitAsync()
     {
         Debug.Log("PlayerStateBase ExitAsync");
         await UniTask.CompletedTask;
