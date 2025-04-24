@@ -17,14 +17,14 @@ public abstract class PlayerStateBase: IPlayerState, IDisposable
     }
 
     //状態が始まったときの処理
-    public virtual async UniTask OnEnterAsync()
+    public virtual async UniTask EnterAsync()
     {
         Debug.Log("PlayerStateBase EnterAsync");
         await UniTask.CompletedTask;
     }
 
     //状態が終わるときの処理
-    public virtual async UniTask OnExitAsync()
+    public virtual async UniTask ExitAsync()
     {
         Debug.Log("PlayerStateBase ExitAsync");
         await UniTask.CompletedTask;
