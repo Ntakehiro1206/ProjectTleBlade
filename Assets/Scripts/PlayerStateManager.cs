@@ -6,9 +6,9 @@ using Cysharp.Threading.Tasks;
 
 public class PlayerStateManager
 {
-    static private PlayerStateManager _instance;
+    private static PlayerStateManager _instance;
 
-    static public PlayerStateManager Instance
+    public static PlayerStateManager Instance
     {
         get
         {
@@ -34,7 +34,7 @@ public class PlayerStateManager
         
         _playerState = new ReactiveProperty<PlayerState>(PlayerState.Boot);
 
-        //_playerState.Pairwise().Subscribe(async states => await OnChangeState(states.Previous, states.Current);
+        _playerState.Pairwise().Subscribe(async states => await OnChangeState(states.Previous, states.Current));
     }
 
     public void Dispose()

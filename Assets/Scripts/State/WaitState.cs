@@ -1,25 +1,25 @@
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
-public class WateState : PlayerStateBase
+public class WaitState : PlayerStateBase
 {
     public override void Initialize()
     {
         base.Initialize();
-        Debug.Log("WateState Initialize");
+        Debug.Log("WaitState Initialize");
     }
 
     public override async UniTask EnterAsync()
     {
         await base.EnterAsync();
-        Debug.Log("WateState Enter");
+        Debug.Log("WaitState Enter");
         await UniTask.CompletedTask;
     }
 
     public override async UniTask ExitAsync()
     {
         await base.ExitAsync();
-        Debug.Log("WateState Exit");
+        Debug.Log("WaitState Exit");
         await UniTask.CompletedTask;
     }
 }
