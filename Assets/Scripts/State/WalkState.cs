@@ -3,10 +3,13 @@ using Cysharp.Threading.Tasks;
 
 public class WalkState : PlayerStateBase
 {
+    private Rigidbody rb;
+    
     public override void Initialize()
     {
         base.Initialize();
-        Debug.Log("WalkState Initialize");
+        //Debug.Log("WalkState Initialize");
+        
     }
 
     public override async UniTask EnterAsync()
